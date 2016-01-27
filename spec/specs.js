@@ -4,15 +4,3 @@ describe('Account', function() {
     expect(testAccount.userName).to.equal("Erik");
     expect(testAccount.initialDeposit).to.equal(10);
   });
-
- it("will add to account balance", function (){
-    var testAccount = new Account("Erik", 10);
-    expect(testAccount.deposits(5)).to.equal(15);
- });
-
- it("will subract from account balance", function () {
-   var testAccount = new Account("Erik", 10);
-   expect(testAccount.withdrawls(5)).to.equal(5);
- });
-
-});

@@ -1,10 +1,10 @@
-#Bank Account
+#Hang Man
 
 ##Author
-Alex Larson & Erik Tolentino
+Alex Larson & Polina Nenchev
 
 ##Project Description
-A project that allows users to create a bank account, deposit and withdraw amounts of money, and keep track of their account balance.
+This project allows you to play hangman against the computer for a set of random words.  
 
 ##Tools Used
 Bootstrap
