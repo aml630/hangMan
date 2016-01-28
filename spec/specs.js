@@ -25,6 +25,10 @@ describe("Word", function() {
       var newWord = new Word("dog");
       expect(newWord.wrongGuesses).to.equal(0);
     });
+    // it("will get a random word", function() {
+    //   var newWord = new Word("dog");
+    //   expect(newWord.randomize()).to.equal("");
+    // });
 });
 
 describe('loopLetter', function() {

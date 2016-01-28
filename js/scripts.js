@@ -4,7 +4,7 @@ function Word(example) {
     this.wrongGuesses = 0;
     this.correctGuesses = this.example.length;
     this.guessedLetters = [];
-    this.randomWord = ""
+    this.randomWord = "";
 };
 
 
@@ -57,21 +57,19 @@ var loopLetter = function(letter, word) {
 };
 }
 
-Word.prototype.randomWord = function () {
+Word.prototype.randomize = function () {
   var array = ["dog", "mouse", "rat", "cat", "bird"]
-  console.log(random)
-  var random = math.random() *(4-0);
+  var random = Math.floor(Math.random()*(4-0));
   var word = array[random]
-  word = this.randomWord
-  return word
+  this.randomWord = word
+  console.log(this.randomWord)
+  return this.randomWord
 };
 
 
 $(function() {
-
-
-  var newWord = new Word("house");
-  var blanks = newWord.replaceWord();
+  // var newWord = new Word(this.example.length);
+  // var blanks = newWord.replaceWord();
 
   $("#word-display").text(blanks);
   $("#hiddenWord").append(newWord);
