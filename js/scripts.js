@@ -47,13 +47,11 @@ Word.prototype.result = function(word, letter, guesses) {
     }
 }
 
-
 Word.prototype.guess = function(word, letter, guesses) {
   var newGuess = new Word(word, letter, guesses);
   var wordLength = newGuess.chop(word)
   console.log(wordLength.length)
     for(var i = 0; i<=wordLength.length; i = i+1 ){
-      // debugger;
         if(this.letter === wordLength[i]) {
           console.log(wordLength[i])
           this.currentWord.push(letter)
@@ -61,9 +59,6 @@ Word.prototype.guess = function(word, letter, guesses) {
     }
     return this.currentWord;
 };
-
-
-
 
 
 $(function() {
