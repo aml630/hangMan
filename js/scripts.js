@@ -22,26 +22,7 @@ Word.prototype.correctGuesses = function() {
         return this.correctGuesses;
 };
 
-var loopLetters = function(letter, word) {
-  var gotletter = false;
-  var array = [];
-  word.guessedLetters.push(letter);
-  for(var i = 0; i<=word.example.length; i = i+1 ){
-    if(word.example[i] === letter) {
-      array.push(i)
-      foundLetter = true;
-      }
-    }
-    if (gotletter === false) {
-      return gotletter;
-    }else {
-    return array;
-};
-}
-
-//
 Word.prototype.replaceWord = function() {
-
     var chopWord = this.example;
     for (var i = 1; i <= chopWord.length; i++) {
         this.guessedLetters.push("_");
@@ -51,10 +32,36 @@ Word.prototype.replaceWord = function() {
 };
 
 Word.prototype.count = function() {
-  // debugger;
   console.log(this.example)
 return this.example.length
 };
+
+var loopLetter = function(letter, word) {
+  var gotletter = false;
+  var array = [];
+  word.guessedLetters.push(letter);
+  for(var i = 0; i<=word.example.length; i = i+1 ){
+    if(word.example[i] === letter) {
+      array.push(i)
+      array.push(word.example.length)
+
+      gotletter = true;
+      }
+    }
+    if (gotletter === false) {
+      return gotletter;
+    }else {
+      console.log(word.guessedLetters)
+
+    return array;
+};
+}
+
+
+
+
+
+
 
 // Word.prototype.result = function(word, letter, guesses) {
 //     var newWord = new Word(word, letter, guesses);
