@@ -10,7 +10,7 @@ var ChoseWord = function () {
 function Word(example, letter, guesses) {
     this.example = example;
     this.letter = letter;
-    this.guesses = 0;
+    this.guesses = guesses;
     this.currentWord = [];
 };
 
@@ -37,8 +37,9 @@ Word.prototype.count = function(word) {
     return wordLength;
 };
 
-Word.prototype.lose = function(word, letter, guesses) {
+Word.prototype.result = function(word, letter, guesses) {
     var newWord = new Word(word, letter, guesses);
+    debugger;
     if (this.guesses >= newWord.count(word)) {
         return "you lose";
     } else {
@@ -46,32 +47,24 @@ Word.prototype.lose = function(word, letter, guesses) {
     }
 }
 
-// Word.prototype.correct = function(currentWord) {
-//   var correctArray = [];
-//     for(i=0; i<= correctArray; i++) {
-//       if(letter === guesses) {
-//         return
-//       }
-//     }
-//
-// }
-
 
 Word.prototype.guess = function(word, letter, guesses) {
   var newGuess = new Word(word, letter, guesses);
   var wordLength = newGuess.chop(word)
-    for(var i = 0; i<=wordLength.length; i++ ){
+  console.log(wordLength.length)
+    for(var i = 0; i<=wordLength.length; i = i+1 ){
       // debugger;
-        if(letter === wordLength[i]) {
-          var spliced = this.currentWord.push(letter)
-          console.log(spliced)
-
-            }else {
-        this.guesses = this.guesses +1
-            }
-        return this.guesses
+        if(this.letter === wordLength[i]) {
+          console.log(wordLength[i])
+          this.currentWord.push(letter)
+        }
     }
+    return this.currentWord;
 };
+
+
+
+
 
 $(function() {
 
