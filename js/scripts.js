@@ -4,6 +4,7 @@ function Word(example) {
     this.wrongGuesses = 0;
     this.correctGuesses = this.example.length;
     this.guessedLetters = [];
+    this.randomWord = ""
 };
 
 
@@ -38,10 +39,11 @@ return this.example.length
 var loopLetter = function(letter, word) {
   var gotletter = false;
   var array = [];
-  // word.guessedLetters.push(letter);
+
   for(var i = 0; i<=word.example.length; i = i+1 ){
     if(word.example[i] === letter) {
       // debugger;
+      // console.log(word.guessedLetters)
       array.push(i)
       array.push(word.example.length)
       word.guessedLetters[i] = letter;
@@ -55,11 +57,14 @@ var loopLetter = function(letter, word) {
 };
 }
 
-// var randomWord = function () {
-// var array = ["dog", "mouse", "rat", "cat", "bird"]
-// var random = math.random() *(4-0);
-// console.log(random)
-// }
+Word.prototype.randomWord = function () {
+  var array = ["dog", "mouse", "rat", "cat", "bird"]
+  console.log(random)
+  var random = math.random() *(4-0);
+  var word = array[random]
+  word = this.randomWord
+  return word
+};
 
 
 $(function() {
