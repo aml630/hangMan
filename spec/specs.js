@@ -25,18 +25,7 @@ describe("Word", function() {
       var newWord = new Word("dog");
       expect(newWord.wrongGuesses).to.equal(0);
     });
-
-    // it("will tell you if you lose", function() {
-    //     var newWord = new Word("dog", "d", 9);
-    //     expect(newWord.result("dog", "z", 9)).to.equal("you lose");
-    // });
-    //
-    // it("will tell you if you should keep guessing", function() {
-    //     var newWord = new Word("dog", "d", 0);
-    //     expect(newWord.result("dog", "z", 0)).to.equal("keep guessing");
-    // });
 });
-
 
 describe('loopLetter', function() {
   it('will search the loopcreated and if the guess is wrong will give the user false', function(){

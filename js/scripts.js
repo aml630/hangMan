@@ -32,74 +32,52 @@ Word.prototype.replaceWord = function() {
 };
 
 Word.prototype.count = function() {
-  console.log(this.example)
 return this.example.length
 };
 
 var loopLetter = function(letter, word) {
   var gotletter = false;
   var array = [];
-  word.guessedLetters.push(letter);
+  // word.guessedLetters.push(letter);
   for(var i = 0; i<=word.example.length; i = i+1 ){
     if(word.example[i] === letter) {
+      // debugger;
       array.push(i)
       array.push(word.example.length)
-
+      word.guessedLetters[i] = letter;
       gotletter = true;
       }
     }
     if (gotletter === false) {
       return gotletter;
     }else {
-      console.log(word.guessedLetters)
-
-    return array;
+    return word.guessedLetters;
 };
 }
 
-
-
-
-
-
-
-// Word.prototype.result = function(word, letter, guesses) {
-//     var newWord = new Word(word, letter, guesses);
-//     debugger;
-//     if (this.guesses >= newWord.count(word)) {
-//         return "you lose";
-//     } else {
-//         return "keep guessing";
-//     }
+// var randomWord = function () {
+// var array = ["dog", "mouse", "rat", "cat", "bird"]
+// var random = math.random() *(4-0);
+// console.log(random)
 // }
-//
-// Word.prototype.guess = function(word, letter, guesses) {
-//   var newGuess = new Word(word, letter, guesses);
-//   var wordLength = newGuess.chop(word)
-//   console.log(wordLength.length)
-//     for(var i = 0; i<=wordLength.length; i = i+1 ){
-//         if(this.letter === wordLength[i]) {
-//           console.log(wordLength[i])
-//           this.currentWord.push(letter)
-//         }
-//     }
-//     return this.currentWord;
-// };
 
 
-// $(function() {
-//
-//   // var word = ChoseWord();
-//   // var newWord = new Word(word);
-//   // this.currentWord = newWord.replaceWord(word);
-//   $("#word-display").text(this.currentWord);
-//   $("#hiddenWord").append(word)
-//
-//   $("form").submit(function(event) {
-//     var inputLetter = $("#letters").val();
-//     var results = newWord.guess(word,inputLetter,guesses);
-//   });
-// });
-// $("#guesses").text(results);
-//         event.preventDefault();
-//     });
+$(function() {
+
+
+  var newWord = new Word("house");
+  var blanks = newWord.replaceWord();
+
+  $("#word-display").text(blanks);
+  $("#hiddenWord").append(newWord);
+  $("form").submit(function(event) {
+    // debugger;
+    var inputLetter = $("#letters").val();
+    var result = loopLetter(inputLetter, newWord)
+    event.preventDefault();
+    $("#word-display").text(result);
+
+  });
+
+$("#guesses").text("house");
+    });
